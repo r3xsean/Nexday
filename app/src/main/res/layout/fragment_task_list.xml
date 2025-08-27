@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Empty State Container (visible when no tasks) -->
+    <LinearLayout
+        android:id="@+id/emptyStateContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/spacing_xxxl"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <ImageView
+            android:id="@+id/emptyStateIcon"
+            android:layout_width="@dimen/icon_size_xxl"
+            android:layout_height="@dimen/icon_size_xxl"
+            android:src="@drawable/ic_today_24"
+            android:tint="?attr/colorOnSurfaceVariant"
+            android:alpha="0.7"
+            android:layout_marginBottom="@dimen/spacing_lg" />
+        
+        <TextView
+            android:id="@+id/emptyStateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No tasks yet"
+            android:textAppearance="@style/TextAppearance.Nexday.EmptyStateTitle"
+            android:layout_marginBottom="@dimen/spacing_sm" />
+        
+        <TextView
+            android:id="@+id/emptyStateMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add your first task to get started!"
+            android:textAppearance="@style/TextAppearance.Nexday.EmptyStateMessage" />
+            
+    </LinearLayout>
+
+    <!-- RecyclerView for task list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tasksRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_sm"
+        android:clipToPadding="false"
+        android:visibility="gone"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_task" />
+
+    <!-- Task count summary (visible at bottom when tasks exist) -->
+    <TextView
+        android:id="@+id/taskCountSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 tasks"
+        android:textAppearance="@style/TextAppearance.Nexday.LabelMedium"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:padding="@dimen/spacing_md"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Nexday" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary color scheme -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_variant</item>
+        
+        <!-- Secondary color scheme -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_variant</item>
+        
+        <!-- Surface color scheme -->
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="colorSurfaceContainer">@color/surface_container</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnBackground">@color/on_background</item>
+        
+        <!-- Outline colors for better definition -->
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorOutlineVariant">@color/outline_variant</item>
+        
+        <!-- System colors -->
+        <item name="colorError">@color/error_red</item>
+        <item name="android:colorControlActivated">@color/primary</item>
+        <item name="android:colorControlHighlight">@color/primary_variant</item>
+        
+        <!-- Enhanced interaction states -->
+        <item name="colorControlNormal">@color/on_surface_variant</item>
+        <item name="android:colorControlNormal">@color/on_surface_variant</item>
+        
+        <!-- Text appearance improvements -->
+        <item name="android:textColorPrimary">@color/on_surface</item>
+        <item name="android:textColorSecondary">@color/on_surface_variant</item>
+        <item name="android:textColorHint">@color/on_surface_variant</item>
+        
+        <!-- Material component styling -->
+        <item name="materialCardViewStyle">@style/Widget.Nexday.CardView</item>
+        <item name="materialButtonStyle">@style/Widget.Nexday.Button</item>
+        <item name="textInputStyle">@style/Widget.Nexday.TextInputLayout</item>
+        
+        <!-- Typography styles -->
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.Nexday.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.Nexday.DisplayMedium</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Nexday.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.Nexday.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Nexday.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Nexday.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Nexday.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Nexday.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Nexday.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Nexday.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Nexday.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Nexday.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Nexday.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Nexday.LabelSmall</item>
+        
+        <!-- Window and status bar -->
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        
+        <!-- Fast, non-blocking window animations -->
+        <item name="android:windowAnimationStyle">@style/FastAnimation</item>
+    </style>
+    
+    <!-- Enhanced Material Card style -->
+    <style name="Widget.Nexday.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/surface</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="strokeColor">@color/outline_variant</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+    
+    <!-- Enhanced Button style -->
+    <style name="Widget.Nexday.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+    
+    <!-- Enhanced TextInputLayout style -->
+    <style name="Widget.Nexday.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/surface_variant</item>
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="hintTextColor">@color/on_surface_variant</item>
+    </style>
+    
+    <!-- Enhanced FAB style -->
+    <style name="Widget.Nexday.FloatingActionButton" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="tint">@color/on_primary</item>
+        <item name="elevation">8dp</item>
+        <item name="pressedTranslationZ">12dp</item>
+    </style>
+    
+    <!-- Fast animation style for smooth but non-blocking screen transitions -->
+    <style name="FastAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+</resources>

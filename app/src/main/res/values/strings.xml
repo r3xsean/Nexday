@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Nexday</string>
+    
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="day_rollover">Day Rollover</string>
+    <string name="day_rollover_description">Automatically move tasks between days at a scheduled time</string>
+    <string name="enable_auto_rollover">Enable automatic rollover</string>
+    <string name="rollover_time">Rollover Time</string>
+    <string name="hour">Hour</string>
+    <string name="minute">Minute</string>
+    <string name="rollover_time_explanation">Tomorrow tasks move to Today, Today tasks move to Yesterday</string>
+    
+    <!-- Notification Settings -->
+    <string name="notification_preferences">Notification Preferences</string>
+    <string name="notification_preferences_description">Customize when and how Nexday reminds you</string>
+    <string name="enable_notifications">Enable notifications</string>
+    <string name="daily_reminder">Daily planning reminder</string>
+    <string name="reminder_time">Reminder time</string>
+    <string name="set_time">Set time</string>
+    <string name="task_reminders">Task reminders</string>
+    <string name="test_notification">Test notification</string>
+    
+    <!-- Notification Channels -->
+    <string name="daily_reminder_channel_name">Daily Planning Reminders</string>
+    <string name="daily_reminder_channel_description">Notifications to remind you to plan your day</string>
+    <string name="task_reminder_channel_name">Task Reminders</string>
+    <string name="task_reminder_channel_description">Reminders for your scheduled tasks</string>
+    <string name="level_up_channel_name">Level Up Celebrations</string>
+    <string name="level_up_channel_description">Congratulations when you level up</string>
+    
+    <!-- Notification Content -->
+    <string name="daily_reminder_notification_title">Time to plan your day!</string>
+    <string name="daily_reminder_notification_text">What do you want to accomplish tomorrow?</string>
+    <string name="daily_reminder_notification_big_text">Open Nexday to review your progress and plan tomorrow\'s tasks. Stay on track with your goals!</string>
+    
+    <string name="task_reminder_notification_title">Task reminder: %1$s</string>
+    <string name="task_reminder_default_text">Don\'t forget about this task!</string>
+    
+    <string name="level_up_notification_title">🎉 Level %1$d achieved!</string>
+    <string name="level_up_notification_text">You now have %1$d total XP. Keep going!</string>
+    <string name="level_up_notification_big_text">Congratulations! You\'ve reached Level %1$d with %2$d total XP. Your dedication to daily planning is paying off!</string>
+    
+    <string name="test_notification_title">Nexday Test Notification</string>
+    <string name="test_notification_text">Notifications are working correctly! 🎯</string>
+</resources>

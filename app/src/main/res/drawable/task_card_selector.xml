@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorPrimary"
+    android:radius="?android:attr/selectableItemBackgroundBorderless">
+    <item android:id="@android:id/background">
+        <selector>
+            <!-- Pressed state -->
+            <item android:state_pressed="true">
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/corner_radius_lg" />
+                    <solid android:color="?attr/colorSurface" />
+                    <stroke 
+                        android:width="@dimen/stroke_width_medium" 
+                        android:color="?attr/colorPrimary" />
+                </shape>
+            </item>
+            <!-- Focused state -->
+            <item android:state_focused="true">
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/corner_radius_lg" />
+                    <solid android:color="?attr/colorSurface" />
+                    <stroke 
+                        android:width="@dimen/stroke_width_thin" 
+                        android:color="?attr/colorPrimary" />
+                </shape>
+            </item>
+            <!-- Default state -->
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/corner_radius_lg" />
+                    <solid android:color="?attr/colorSurface" />
+                    <stroke 
+                        android:width="@dimen/stroke_width_thin" 
+                        android:color="?attr/colorOutlineVariant" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>

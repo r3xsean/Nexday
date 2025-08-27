@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- Settings Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Day Rollover Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/day_rollover"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/day_rollover_description"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Enable/Disable Switch -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/enable_auto_rollover"
+                            android:textAppearance="?attr/textAppearanceBody1" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/rollover_enabled_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <!-- Rollover Time Section -->
+                    <LinearLayout
+                        android:id="@+id/rollover_time_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rollover_time"
+                            android:textAppearance="?attr/textAppearanceBody1"
+                            android:layout_marginBottom="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <!-- Hour Picker -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/hour"
+                                    android:textAppearance="?attr/textAppearanceCaption"
+                                    android:layout_marginBottom="4dp" />
+
+                                <NumberPicker
+                                    android:id="@+id/rollover_hour_picker"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="120dp" />
+
+                            </LinearLayout>
+
+                            <!-- Separator -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=":"
+                                android:textAppearance="?attr/textAppearanceHeadline4"
+                                android:layout_marginHorizontal="16dp"
+                                android:gravity="center" />
+
+                            <!-- Minute Picker -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/minute"
+                                    android:textAppearance="?attr/textAppearanceCaption"
+                                    android:layout_marginBottom="4dp" />
+
+                                <NumberPicker
+                                    android:id="@+id/rollover_minute_picker"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="120dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rollover_time_explanation"
+                            android:textAppearance="?attr/textAppearanceCaption"
+                            android:textColor="?attr/colorOnSurfaceVariant"
+                            android:layout_marginTop="8dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Notification Preferences Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notification_preferences"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notification_preferences_description"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Global Notifications Toggle -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/enable_notifications"
+                            android:textAppearance="?attr/textAppearanceBody1" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/notifications_enabled_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <!-- Notification Options Container -->
+                    <LinearLayout
+                        android:id="@+id/notification_options_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Daily Reminder Section -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/daily_reminder"
+                                android:textAppearance="?attr/textAppearanceBody1" />
+
+                            <com.google.android.material.switchmaterial.SwitchMaterial
+                                android:id="@+id/daily_reminder_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <!-- Daily Reminder Time -->
+                        <LinearLayout
+                            android:id="@+id/daily_reminder_time_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="16dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="0dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/reminder_time"
+                                android:textAppearance="?attr/textAppearanceBody2"
+                                android:textColor="?attr/colorOnSurfaceVariant" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/reminder_time_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/set_time"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
+                                app:cornerRadius="8dp" />
+
+                        </LinearLayout>
+
+                        <!-- Task Reminders -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="16dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/task_reminders"
+                                android:textAppearance="?attr/textAppearanceBody1" />
+
+                            <com.google.android.material.switchmaterial.SwitchMaterial
+                                android:id="@+id/task_reminders_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <!-- Test Notification Button -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/test_notification_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/test_notification"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            app:cornerRadius="8dp"
+                            app:icon="@drawable/ic_notifications_24"
+                            app:iconGravity="start" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

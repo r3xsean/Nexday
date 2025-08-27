@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorPrimary"
+    android:radius="24dp">
+    <item android:id="@android:id/background">
+        <selector>
+            <!-- Pressed state -->
+            <item android:state_pressed="true">
+                <shape android:shape="oval">
+                    <solid android:color="?attr/colorPrimaryContainer" />
+                </shape>
+            </item>
+            <!-- Focused state -->
+            <item android:state_focused="true">
+                <shape android:shape="oval">
+                    <solid android:color="?attr/colorSurfaceVariant" />
+                </shape>
+            </item>
+            <!-- Default state -->
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="@android:color/transparent" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state -->
+    <item android:state_pressed="true" android:color="?attr/colorPrimary" />
+    
+    <!-- Focused state -->
+    <item android:state_focused="true" android:color="?attr/colorPrimary" />
+    
+    <!-- Activated state (for toggle buttons) -->
+    <item android:state_activated="true" android:color="?attr/colorPrimary" />
+    
+    <!-- Selected state -->
+    <item android:state_selected="true" android:color="?attr/colorPrimary" />
+    
+    <!-- Default state -->
+    <item android:color="?attr/colorOnSurfaceVariant" />
+</selector>

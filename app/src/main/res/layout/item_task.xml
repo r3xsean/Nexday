@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/taskCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/card_margin_horizontal"
+    android:layout_marginVertical="@dimen/card_margin_vertical"
+    app:cardCornerRadius="@dimen/corner_radius_lg"
+    app:cardElevation="@dimen/elevation_level_4"
+    app:strokeWidth="@dimen/stroke_width_thin"
+    app:strokeColor="@color/outline_variant"
+    android:backgroundTint="?attr/colorSurface"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/task_item_padding">
+
+        <!-- Difficulty Indicator Circle -->
+        <View
+            android:id="@+id/difficultyIndicator"
+            android:layout_width="@dimen/difficulty_indicator_size"
+            android:layout_height="@dimen/difficulty_indicator_size"
+            android:background="@drawable/circle_shape"
+            android:backgroundTint="?attr/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/taskTitle"
+            app:layout_constraintBottom_toBottomOf="@id/taskTitle" />
+
+        <!-- Task Title -->
+        <TextView
+            android:id="@+id/taskTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/task_title_margin_start"
+            android:layout_marginEnd="@dimen/spacing_sm"
+            android:text="Sample Task Title"
+            android:textAppearance="@style/TextAppearance.Nexday.TaskTitle"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/difficultyIndicator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/xpBadge"
+            tools:text="Complete project documentation" />
+
+        <!-- Delete Button -->
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="@dimen/delete_button_size"
+            android:layout_height="@dimen/delete_button_size"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete_24"
+            android:tint="?attr/colorOnSurfaceVariant"
+            android:alpha="0.7"
+            android:contentDescription="Delete task"
+            android:padding="@dimen/spacing_xs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/taskTitle"
+            app:layout_constraintBottom_toBottomOf="@id/taskTitle" />
+
+        <!-- Edit Button -->
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="@dimen/edit_button_size"
+            android:layout_height="@dimen/edit_button_size"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_edit_24"
+            android:tint="?attr/colorOnSurfaceVariant"
+            android:alpha="0.7"
+            android:contentDescription="Edit task"
+            android:padding="@dimen/spacing_xs"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            app:layout_constraintEnd_toStartOf="@id/deleteButton"
+            app:layout_constraintTop_toTopOf="@id/taskTitle"
+            app:layout_constraintBottom_toBottomOf="@id/taskTitle" />
+
+        <!-- XP Badge -->
+        <TextView
+            android:id="@+id/xpBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+3 XP"
+            android:textAppearance="@style/TextAppearance.Nexday.XPBadge"
+            android:background="@drawable/rounded_badge_shape"
+            android:backgroundTint="?attr/colorPrimary"
+            android:paddingHorizontal="@dimen/xp_badge_padding_horizontal"
+            android:paddingVertical="@dimen/xp_badge_padding_vertical"
+            android:layout_marginEnd="@dimen/spacing_sm"
+            app:layout_constraintEnd_toStartOf="@id/editButton"
+            app:layout_constraintTop_toTopOf="@id/taskTitle"
+            app:layout_constraintBottom_toBottomOf="@id/taskTitle"
+            tools:text="+5 XP" />
+
+        <!-- Task Description (optional, shown when exists) -->
+        <TextView
+            android:id="@+id/taskDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/task_description_margin_start"
+            android:layout_marginTop="@dimen/task_description_margin_top"
+            android:text="Task description goes here"
+            android:textAppearance="@style/TextAppearance.Nexday.TaskDescription"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/taskTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="This is a sample task description that explains what needs to be done"
+            tools:visibility="visible" />
+
+        <!-- Task Time (optional, shown for scheduled tasks) -->
+        <LinearLayout
+            android:id="@+id/taskTimeContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/task_time_margin_start"
+            android:layout_marginTop="@dimen/task_time_margin_top"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/taskDescription"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="@dimen/icon_size_sm"
+                android:layout_height="@dimen/icon_size_sm"
+                android:src="@drawable/ic_schedule_24"
+                android:tint="?attr/colorOnSurfaceVariant"
+                android:alpha="0.8" />
+
+            <TextView
+                android:id="@+id/taskTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:text="10:30 AM"
+                android:textAppearance="@style/TextAppearance.Nexday.LabelSmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                tools:text="2:30 PM" />
+
+        </LinearLayout>
+
+        <!-- Completion Status Overlay (subtle background tint) -->
+        <View
+            android:id="@+id/completionOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/success_green"
+            android:alpha="0.05"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/completionCheck"
+            android:layout_width="@dimen/completion_check_size"
+            android:layout_height="@dimen/completion_check_size"
+            android:src="@drawable/ic_check_circle_24"
+            android:tint="@color/success_green"
+            android:visibility="gone"
+            android:elevation="2dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
